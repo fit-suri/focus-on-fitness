@@ -1,0 +1,54 @@
+{
+  "project_structure": {
+    "package.json": {
+      "name": "focus-on-fitness",
+      "version": "0.1.0",
+      "private": true,
+      "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+      },
+      "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "next": "14.0.0",
+        "lucide-react": "^0.263.1"
+      },
+      "devDependencies": {
+        "typescript": "^5.0.0",
+        "@types/node": "^20.0.0",
+        "@types/react": "^18.0.0",
+        "@types/react-dom": "^18.0.0",
+        "tailwindcss": "^3.3.0",
+        "postcss": "^8.4.0",
+        "autoprefixer": "^10.4.0",
+        "eslint": "^8.0.0",
+        "eslint-config-next": "14.0.0"
+      }
+    },
+    "next.config.js": "/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  reactStrictMode: true,\n  swcMinify: true,\n  images: {\n    domains: [],\n  },\n}\n\nmodule.exports = nextConfig",
+    "tailwind.config.js": "/** @type {import('tailwindcss').Config} */\nmodule.exports = {\n  content: [\n    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',\n    './src/components/**/*.{js,ts,jsx,tsx,mdx}',\n    './src/app/**/*.{js,ts,jsx,tsx,mdx}',\n  ],\n  theme: {\n    extend: {\n      backgroundImage: {\n        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',\n        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',\n      },\n    },\n  },\n  plugins: [],\n}",
+    "postcss.config.js": "module.exports = {\n  plugins: {\n    tailwindcss: {},\n    autoprefixer: {},\n  },\n}",
+    "tsconfig.json": "{\n  \"compilerOptions\": {\n    \"target\": \"es5\",\n    \"lib\": [\"dom\", \"dom.iterable\", \"es6\"],\n    \"allowJs\": true,\n    \"skipLibCheck\": true,\n    \"strict\": true,\n    \"noEmit\": true,\n    \"esModuleInterop\": true,\n    \"module\": \"esnext\",\n    \"moduleResolution\": \"bundler\",\n    \"resolveJsonModule\": true,\n    \"isolatedModules\": true,\n    \"jsx\": \"preserve\",\n    \"incremental\": true,\n    \"plugins\": [\n      {\n        \"name\": \"next\"\n      }\n    ],\n    \"baseUrl\": \".\",\n    \"paths\": {\n      \"@/*\": [\"./src/*\"]\n    }\n  },\n  \"include\": [\"next-env.d.ts\", \"**/*.ts\", \"**/*.tsx\", \".next/types/**/*.ts\"],\n  \"exclude\": [\"node_modules\"]\n}",
+    "src/app/layout.tsx": "import type { Metadata } from 'next'\nimport { Inter } from 'next/font/google'\nimport './globals.css'\n\nconst inter = Inter({ subsets: ['latin'] })\n\nexport const metadata: Metadata = {\n  title: 'Focus on Fitness - Premium Gym Setup, Equipment & Corporate Wellness Solutions',\n  description: 'Leading gym setup & fitness equipment provider in India. 100+ successful projects, certified trainers, corporate wellness programs. Contact us for premium fitness solutions.',\n  keywords: 'gym setup, fitness equipment, corporate wellness, personal training, gym design, fitness center management, India',\n  openGraph: {\n    title: 'Focus on Fitness - Premium Gym Services & Equipment',\n    description: 'Transform your space with premium gym setup services. Expert fitness solutions for corporates & individuals.',\n    url: 'https://focusonfitness.in',\n    siteName: 'Focus on Fitness',\n    type: 'website',\n  },\n  viewport: 'width=device-width, initial-scale=1.0',\n  robots: 'index, follow',\n}\n\nexport default function RootLayout({\n  children,\n}: {\n  children: React.ReactNode\n}) {\n  return (\n    <html lang=\"en\">\n      <body className={inter.className}>{children}</body>\n    </html>\n  )\n}",
+    "src/app/globals.css": "@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n}\n\nhtml,\nbody {\n  max-width: 100vw;\n  overflow-x: hidden;\n}\n\nbody {\n  color: rgb(var(--foreground-rgb));\n  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))\n    rgb(var(--background-start-rgb));\n}\n\na {\n  color: inherit;\n  text-decoration: none;\n}\n\n@media (prefers-color-scheme: dark) {\n  html {\n    color-scheme: dark;\n  }\n}",
+    "src/app/page.tsx": "import FocusFitnessWebsite from '@/components/FocusFitnessWebsite'\n\nexport default function Home() {\n  return (\n    <main>\n      <FocusFitnessWebsite />\n    </main>\n  )\n}",
+    "src/components/FocusFitnessWebsite.tsx": "// Your existing TSX component code goes here\n// Copy the entire content from focus-fitness-website.tsx",
+    ".eslintrc.json": "{\n  \"extends\": \"next/core-web-vitals\"\n}",
+    ".gitignore": "# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.\n\n# dependencies\n/node_modules\n/.pnp\n.pnp.js\n\n# testing\n/coverage\n\n# next.js\n/.next/\n/out/\n\n# production\n/build\n\n# misc\n.DS_Store\n*.pem\n\n# debug\nnpm-debug.log*\nyarn-debug.log*\nyarn-error.log*\n\n# local env files\n.env*.local\n\n# vercel\n.vercel\n\n# typescript\n*.tsbuildinfo\nnext-env.d.ts",
+    "README.md": "# Focus on Fitness Website\n\nA modern, responsive website for Focus on Fitness - a premium gym setup and fitness equipment provider.\n\n## Features\n\n- 🏋️‍♂️ Modern fitness-focused design\n- 📱 Fully responsive layout\n- ⚡ Built with Next.js 14 and TypeScript\n- 🎨 Styled with Tailwind CSS\n- 🔥 Smooth animations and transitions\n- 📞 Contact form functionality\n- 🎯 SEO optimized\n\n## Getting Started\n\n### Prerequisites\n\n- Node.js 18.0 or later\n- npm or yarn\n\n### Installation\n\n1. Clone the repository:\n```bash\ngit clone <your-repo-url>\ncd focus-on-fitness\n```\n\n2. Install dependencies:\n```bash\nnpm install\n# or\nyarn install\n```\n\n3. Run the development server:\n```bash\nnpm run dev\n# or\nyarn dev\n```\n\n4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.\n\n## Project Structure\n\n```\nsrc/\n├── app/\n│   ├── globals.css\n│   ├── layout.tsx\n│   └── page.tsx\n└── components/\n    └── FocusFitnessWebsite.tsx\n```\n\n## Built With\n\n- [Next.js](https://nextjs.org/) - React framework\n- [TypeScript](https://www.typescriptlang.org/) - Type safety\n- [Tailwind CSS](https://tailwindcss.com/) - Styling\n- [Lucide React](https://lucide.dev/) - Icons\n\n## Deployment\n\nThe easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_source=github.com&utm_medium=referral&utm_campaign=next-example) from the creators of Next.js.\n\nCheck out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.\n\n## License\n\nThis project is licensed under the MIT License."
+  },
+  "setup_instructions": [
+    "1. Create a new directory for your project: mkdir focus-on-fitness && cd focus-on-fitness",
+    "2. Initialize npm: npm init -y",
+    "3. Install Next.js and dependencies: npm install next@14.0.0 react@^18.2.0 react-dom@^18.2.0 lucide-react@^0.263.1",
+    "4. Install dev dependencies: npm install -D typescript @types/node @types/react @types/react-dom tailwindcss postcss autoprefixer eslint eslint-config-next",
+    "5. Initialize Tailwind CSS: npx tailwindcss init -p",
+    "6. Create the folder structure: mkdir -p src/app src/components",
+    "7. Copy all the configuration files from the structure above",
+    "8. Copy your existing TSX component code into src/components/FocusFitnessWebsite.tsx",
+    "9. Run the development server: npm run dev"
+  ]
+}
