@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import {
   Phone,
   Mail,
@@ -19,6 +20,14 @@ import {
   Zap,
   Shield,
 } from "lucide-react";
+
+type Service = {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  features: string[];
+  link?: string;
+};
 
 const FocusFitnessWebsite = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -59,7 +68,7 @@ const FocusFitnessWebsite = () => {
     </>
   );
 
-  const services = [
+  const services: Service[] = [
     {
       icon: <Building className="w-8 h-8 text-blue-400" />,
       title: "Fitness Center Design",
@@ -71,6 +80,7 @@ const FocusFitnessWebsite = () => {
         "Equipment Integration",
         "Project Management",
       ],
+      link: "/fitness-center-design",
     },
     {
       icon: <Heart className="w-8 h-8 text-pink-400" />,
@@ -83,6 +93,7 @@ const FocusFitnessWebsite = () => {
         "Community Building",
         "Wellness Focus",
       ],
+      link: "/sports-recreational-facility",
     },
     {
       icon: <Users className="w-8 h-8 text-purple-400" />,
@@ -95,6 +106,7 @@ const FocusFitnessWebsite = () => {
         "Employee Assessments",
         "Personalized Training",
       ],
+      link: "/on-site-fitness-management",
     },
     {
       icon: <Target className="w-8 h-8 text-green-400" />,
@@ -107,6 +119,7 @@ const FocusFitnessWebsite = () => {
         "Health Coaching",
         "Corporate Integration",
       ],
+      link: "/wellness-solutions",
     },
     {
       icon: <Dumbbell className="w-8 h-8 text-yellow-400" />,
@@ -119,6 +132,7 @@ const FocusFitnessWebsite = () => {
         "Maintenance Support",
         "Cost-Effective Solutions",
       ],
+      link: "/equipment-lease",
     },
     {
       icon: <Zap className="w-8 h-8 text-orange-400" />,
@@ -131,6 +145,7 @@ const FocusFitnessWebsite = () => {
         "Goal-Oriented",
         "Flexible Scheduling",
       ],
+      link: "/personal-training",
     },
   ];
 
@@ -244,15 +259,21 @@ const FocusFitnessWebsite = () => {
       <section
         id="home"
         className="relative pt-16 pb-20 overflow-hidden"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(20,23,35,0.7),rgba(20,23,35,0.7)), url(https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1500&q=80)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 to-purple-900/30"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+        {/* Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="/gym_video_1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/60 to-purple-900/60 z-10"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 z-20">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent">
@@ -385,9 +406,10 @@ const FocusFitnessWebsite = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div
+              <Link
                 key={index}
-                className="bg-gradient-to-br from-gray-800 to-blue-950 p-8 rounded-xl border border-gray-800 hover:border-blue-400 transition-all hover:transform hover:scale-105"
+                href={service.link || '#'}
+                className="block bg-gradient-to-br from-gray-800 to-blue-950 p-8 rounded-xl border border-gray-800 hover:border-blue-400 transition-all hover:transform hover:scale-105"
               >
                 <div className="mb-4">{service.icon}</div>
                 <h3 className="text-xl font-bold mb-4 text-gray-100">
@@ -405,7 +427,7 @@ const FocusFitnessWebsite = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
