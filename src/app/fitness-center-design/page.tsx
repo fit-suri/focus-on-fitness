@@ -1,4 +1,4 @@
-import FitnessCenterDesign from '@/components/FitnessCenterDesign';
+import FitnessCenterDesign from '@/app/fitness-center-design/FitnessCenterDesign';
 
 export default function FitnessCenterDesignPage() {
   return <FitnessCenterDesign />;
