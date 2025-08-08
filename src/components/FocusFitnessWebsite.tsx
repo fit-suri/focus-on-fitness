@@ -391,7 +391,7 @@ const FocusFitnessWebsite = () => {
         className="py-20 bg-white/80"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.5),rgba(221,236,255,0.5)), url('/victor-freitas-qZ-U9z4TQ6A-unsplash.jpg')",
+            "linear-gradient(rgba(255,255,255,0.25),rgba(221,236,255,0.25)), url('/victor-freitas-qZ-U9z4TQ6A-unsplash.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
