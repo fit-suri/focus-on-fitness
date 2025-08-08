@@ -70,7 +70,7 @@ const FocusFitnessWebsite = () => {
 
   const services: Service[] = [
     {
-      icon: <Building className="w-8 h-8 text-blue-400" />,
+      icon: <Building className="w-8 h-8 text-blue-600" />,
       title: "Fitness Center Design",
       description:
         "With over 100 successful projects delivered across India, our team brings deep industry knowledge and proven design strategies. From concept to execution, we provide complete solutions—seamlessly integrating equipment, layout, and functionality for maximum impact.",
@@ -83,7 +83,7 @@ const FocusFitnessWebsite = () => {
       link: "/fitness-center-design",
     },
     {
-      icon: <Heart className="w-8 h-8 text-pink-400" />,
+      icon: <Heart className="w-8 h-8 text-pink-600" />,
       title: "Sports & Recreational Facility",
       description:
         "We specialize in creating indoor sports and recreation areas designed to elevate employee wellness and team engagement. Whether it's in a corporate office or a residential complex, our thoughtfully crafted spaces encourage regular activity, stress relief, and social connection.",
@@ -96,7 +96,7 @@ const FocusFitnessWebsite = () => {
       link: "/sports-recreational-facility",
     },
     {
-      icon: <Users className="w-8 h-8 text-purple-400" />,
+      icon: <Users className="w-8 h-8 text-purple-600" />,
       title: "On-Site Fitness Management",
       description:
         "Our on-site fitness programs are carefully designed, developed, and executed to meet the specific needs of your organization. We work closely with your team to create wellness initiatives that align with your company culture and health goals.",
@@ -109,7 +109,7 @@ const FocusFitnessWebsite = () => {
       link: "/on-site-fitness-management",
     },
     {
-      icon: <Target className="w-8 h-8 text-green-400" />,
+      icon: <Target className="w-8 h-8 text-green-600" />,
       title: "Wellness Solutions",
       description:
         "We design wellness initiatives that inspire every participant to take ownership of their health journey. Our tailored programs align with your individual and organizational needs, helping foster a culture of vitality and resilience.",
@@ -122,7 +122,7 @@ const FocusFitnessWebsite = () => {
       link: "/wellness-solutions",
     },
     {
-      icon: <Dumbbell className="w-8 h-8 text-yellow-400" />,
+      icon: <Dumbbell className="w-8 h-8 text-yellow-600" />,
       title: "Equipment on Lease",
       description:
         "Planning to open a new fitness facility or upgrade your current gym? Leasing equipment can be a cost-effective way to get started without compromising on quality. Our flexible lease options are tailored to your business needs.",
@@ -135,7 +135,7 @@ const FocusFitnessWebsite = () => {
       link: "/equipment-lease",
     },
     {
-      icon: <Zap className="w-8 h-8 text-orange-400" />,
+      icon: <Zap className="w-8 h-8 text-orange-600" />,
       title: "Personal Training",
       description:
         "Achieve your goals faster with expert guidance tailored to your body, your lifestyle, and your schedule. Our certified trainers design personalized workouts and coach you every step of the way.",
@@ -190,14 +190,14 @@ const FocusFitnessWebsite = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-blue-950 text-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-white via-gray-100 to-blue-100 text-gray-900">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-800">
+      <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <Dumbbell className="w-8 h-8 text-blue-400 mr-3" />
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <Dumbbell className="w-8 h-8 text-blue-600 mr-3" />
+              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-400 bg-clip-text text-transparent">
                 Focus on Fitness
               </span>
             </div>
@@ -210,8 +210,8 @@ const FocusFitnessWebsite = () => {
                     href={`#${item.toLowerCase()}`}
                     className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                       activeSection === item.toLowerCase()
-                        ? "bg-blue-900 text-blue-200"
-                        : "text-gray-200 hover:bg-gray-800 hover:text-blue-300"
+                        ? "bg-blue-100 text-blue-700"
+                        : "text-gray-700 hover:bg-gray-100 hover:text-blue-600"
                     }`}
                   >
                     {item}
@@ -223,7 +223,7 @@ const FocusFitnessWebsite = () => {
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-400 hover:text-blue-300"
+                className="text-gray-600 hover:text-blue-600"
               >
                 {isMenuOpen ? (
                   <X className="w-6 h-6" />
@@ -236,13 +236,13 @@ const FocusFitnessWebsite = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden bg-gray-900/95 backdrop-blur-md">
+          <div className="md:hidden bg-white/95 backdrop-blur-md">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {["Home", "About", "Services", "Contact"].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-blue-300 hover:bg-gray-800"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item}
@@ -256,7 +256,7 @@ const FocusFitnessWebsite = () => {
       {/* Hero Section */}
       <section
         id="home"
-        className="relative pt-16 pb-20 overflow-hidden"
+        className="relative pt-16 pb-20 overflow-hidden bg-gradient-to-br from-white via-gray-100 to-blue-100"
       >
         {/* Video Background */}
         {/*
@@ -274,17 +274,17 @@ const FocusFitnessWebsite = () => {
         {/* Carousel Background */}
         <CarouselBackground />
         {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/60 to-purple-900/60 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-200/20 to-purple-200/20 z-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 z-20">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-purple-400 to-blue-600 bg-clip-text text-transparent">
                 Transform Your Space
               </span>
               <br />
-              <span className="text-gray-100">Into a Fitness Destination</span>
+              <span className="text-gray-900">Into a Fitness Destination</span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
               Whether you're building a high-performance fitness center,
               enhancing a corporate wellness program, or creating a vibrant
               recreational space — Focus on Fitness is your trusted partner.
@@ -292,14 +292,14 @@ const FocusFitnessWebsite = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#contact"
-                className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-400 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl"
               >
                 Get Free Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
               </a>
               <a
                 href="#services"
-                className="inline-flex items-center px-8 py-3 bg-transparent border-2 border-blue-400 text-blue-300 font-semibold rounded-lg hover:bg-blue-900 hover:text-white transition-all"
+                className="inline-flex items-center px-8 py-3 bg-transparent border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-100 hover:text-blue-800 transition-all"
               >
                 View Our Services
               </a>
@@ -311,10 +311,10 @@ const FocusFitnessWebsite = () => {
             <div className="grid grid-cols-2 gap-8 w-full max-w-xs">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">
+                  <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-gray-400">{stat.label}</div>
+                  <div className="text-gray-600">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -325,10 +325,10 @@ const FocusFitnessWebsite = () => {
       {/* About Section */}
       <section
         id="about"
-        className="py-20 bg-gray-800/80"
+        className="py-20 bg-gray-100/80"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(31,41,55,0.85),rgba(31,41,55,0.85)), url(https://images.unsplash.com/photo-1517960413843-0aee8e2d471c?auto=format&fit=crop&w=1500&q=80)",
+            "linear-gradient(rgba(243,244,246,0.85),rgba(243,244,246,0.85)), url(https://images.unsplash.com/photo-1517960413843-0aee8e2d471c?auto=format&fit=crop&w=1500&q=80)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -336,11 +336,11 @@ const FocusFitnessWebsite = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-purple-400 bg-clip-text text-transparent">
                 About Focus on Fitness
               </span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               We specialize in end-to-end fitness solutions: from concept and
               design to equipment selection and full facility management. Every
               project is driven by our commitment to excellence and tailored to
@@ -349,34 +349,34 @@ const FocusFitnessWebsite = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-gray-900 to-blue-950 p-8 rounded-xl border border-gray-800 hover:border-blue-400 transition-colors">
-              <Award className="w-12 h-12 text-blue-400 mb-4" />
-              <h3 className="text-xl font-bold mb-4 text-gray-100">
+            <div className="bg-gradient-to-br from-white to-blue-100 p-8 rounded-xl border border-gray-200 hover:border-blue-400 transition-colors">
+              <Award className="w-12 h-12 text-blue-600 mb-4" />
+              <h3 className="text-xl font-bold mb-4 text-gray-900">
                 Excellence Driven
               </h3>
-              <p className="text-gray-300">
+              <p className="text-gray-700">
                 Every project is driven by our commitment to excellence and
                 tailored to meet your specific needs.
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-900 to-blue-950 p-8 rounded-xl border border-gray-800 hover:border-blue-400 transition-colors">
-              <Users className="w-12 h-12 text-blue-400 mb-4" />
-              <h3 className="text-xl font-bold mb-4 text-gray-100">
+            <div className="bg-gradient-to-br from-white to-blue-100 p-8 rounded-xl border border-gray-200 hover:border-blue-400 transition-colors">
+              <Users className="w-12 h-12 text-blue-600 mb-4" />
+              <h3 className="text-xl font-bold mb-4 text-gray-900">
                 Community Building
               </h3>
-              <p className="text-gray-300">
+              <p className="text-gray-700">
                 We don't just build gyms — we build communities of strength,
                 health, and motivation.
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-900 to-blue-950 p-8 rounded-xl border border-gray-800 hover:border-blue-400 transition-colors">
-              <Shield className="w-12 h-12 text-blue-400 mb-4" />
-              <h3 className="text-xl font-bold mb-4 text-gray-100">
+            <div className="bg-gradient-to-br from-white to-blue-100 p-8 rounded-xl border border-gray-200 hover:border-blue-400 transition-colors">
+              <Shield className="w-12 h-12 text-blue-600 mb-4" />
+              <h3 className="text-xl font-bold mb-4 text-gray-900">
                 Trusted Partner
               </h3>
-              <p className="text-gray-300">
+              <p className="text-gray-700">
                 With 9+ years of experience and 100+ successful projects, we're
                 your reliable fitness partner.
               </p>
@@ -388,10 +388,10 @@ const FocusFitnessWebsite = () => {
       {/* Services Section */}
       <section
         id="services"
-        className="py-20 bg-gray-900/80"
+        className="py-20 bg-white/80"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(17,24,39,0.85),rgba(17,24,39,0.85)), url('/victor-freitas-qZ-U9z4TQ6A-unsplash.jpg')",
+            "linear-gradient(rgba(255,255,255,0.5),rgba(221,236,255,0.5)), url('/victor-freitas-qZ-U9z4TQ6A-unsplash.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -399,11 +399,11 @@ const FocusFitnessWebsite = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-purple-400 bg-clip-text text-transparent">
                 Our Services
               </span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               Comprehensive fitness solutions tailored to your needs
             </p>
           </div>
@@ -413,20 +413,20 @@ const FocusFitnessWebsite = () => {
               <Link
                 key={index}
                 href={service.link || '#'}
-                className="block bg-gradient-to-br from-gray-800 to-blue-950 p-8 rounded-xl border border-gray-800 hover:border-blue-400 transition-all hover:transform hover:scale-105"
+                className="block bg-gradient-to-br from-white to-blue-100 p-8 rounded-xl border border-gray-200 hover:border-blue-400 transition-all hover:transform hover:scale-105"
               >
                 <div className="mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold mb-4 text-gray-100">
+                <h3 className="text-xl font-bold mb-4 text-gray-900">
                   {service.title}
                 </h3>
-                <p className="text-gray-300 mb-6">{service.description}</p>
+                <p className="text-gray-700 mb-6">{service.description}</p>
                 <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
                     <li
                       key={idx}
-                      className="flex items-center text-sm text-gray-200"
+                      className="flex items-center text-sm text-gray-800"
                     >
-                      <CheckCircle className="w-4 h-4 text-green-400 mr-2" />
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
                       {feature}
                     </li>
                   ))}
@@ -438,51 +438,51 @@ const FocusFitnessWebsite = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section id="contact" className="py-20 bg-gray-800/80">
+      <section id="contact" className="py-20 bg-gray-100/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-600 to-purple-400 bg-clip-text text-transparent">
                   Get In Touch
                 </span>
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
+              <p className="text-xl text-gray-700 mb-8">
                 Ready to transform your space? Let's discuss your fitness
                 facility needs and create something amazing together.
               </p>
 
               <div className="space-y-6">
                 <div className="flex items-center">
-                  <Phone className="w-6 h-6 text-blue-400 mr-4" />
+                  <Phone className="w-6 h-6 text-blue-600 mr-4" />
                   <div>
-                    <p className="font-semibold text-gray-100">Call Us</p>
-                    <p className="text-gray-300">+91 9876543210</p>
+                    <p className="font-semibold text-gray-900">Call Us</p>
+                    <p className="text-gray-700">+91 9876543210</p>
                   </div>
                 </div>
 
                 <div className="flex items-center">
-                  <Mail className="w-6 h-6 text-blue-400 mr-4" />
+                  <Mail className="w-6 h-6 text-blue-600 mr-4" />
                   <div>
-                    <p className="font-semibold text-gray-100">Email Us</p>
-                    <p className="text-gray-300">info@focusonfitness.in</p>
+                    <p className="font-semibold text-gray-900">Email Us</p>
+                    <p className="text-gray-700">info@focusonfitness.in</p>
                   </div>
                 </div>
 
                 <div className="flex items-center">
-                  <MapPin className="w-6 h-6 text-blue-400 mr-4" />
+                  <MapPin className="w-6 h-6 text-blue-600 mr-4" />
                   <div>
-                    <p className="font-semibold text-gray-100">Visit Us</p>
-                    <p className="text-gray-300">Bangalore, Karnataka, India</p>
+                    <p className="font-semibold text-gray-900">Visit Us</p>
+                    <p className="text-gray-700">Bangalore, Karnataka, India</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-900 to-blue-950 p-8 rounded-xl border border-gray-800">
+            <div className="bg-gradient-to-br from-white to-blue-100 p-8 rounded-xl border border-gray-200">
               <div className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-gray-200">
+                  <label className="block text-sm font-medium mb-2 text-gray-800">
                     Full Name
                   </label>
                   <input
@@ -490,12 +490,12 @@ const FocusFitnessWebsite = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent text-gray-100 placeholder-gray-400"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent text-gray-900 placeholder-gray-400"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-gray-200">
+                  <label className="block text-sm font-medium mb-2 text-gray-800">
                     Email Address
                   </label>
                   <input
@@ -503,12 +503,12 @@ const FocusFitnessWebsite = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent text-gray-100 placeholder-gray-400"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent text-gray-900 placeholder-gray-400"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-gray-200">
+                  <label className="block text-sm font-medium mb-2 text-gray-800">
                     Phone Number
                   </label>
                   <input
@@ -516,19 +516,19 @@ const FocusFitnessWebsite = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent text-gray-100 placeholder-gray-400"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent text-gray-900 placeholder-gray-400"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-gray-200">
+                  <label className="block text-sm font-medium mb-2 text-gray-800">
                     Service Interested In
                   </label>
                   <select
                     name="service"
                     value={formData.service}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent text-gray-100"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent text-gray-900"
                   >
                     <option value="">Select a service</option>
                     <option value="gym-design">Fitness Center Design</option>
@@ -547,7 +547,7 @@ const FocusFitnessWebsite = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-gray-200">
+                  <label className="block text-sm font-medium mb-2 text-gray-800">
                     Message
                   </label>
                   <textarea
@@ -555,14 +555,14 @@ const FocusFitnessWebsite = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={4}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent text-gray-100 placeholder-gray-400"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent text-gray-900 placeholder-gray-400"
                     placeholder="Tell us about your project requirements..."
                   ></textarea>
                 </div>
 
                 <button
                   onClick={handleFormSubmit}
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl"
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-400 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl"
                 >
                   Send Message
                 </button>
@@ -573,37 +573,37 @@ const FocusFitnessWebsite = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 py-12 border-t border-gray-800">
+      <footer className="bg-white py-12 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center mb-4">
-                <Dumbbell className="w-8 h-8 text-blue-400 mr-3" />
-                <span className="text-xl font-bold text-gray-100">
+                <Dumbbell className="w-8 h-8 text-blue-600 mr-3" />
+                <span className="text-xl font-bold text-gray-900">
                   Focus on Fitness
                 </span>
               </div>
-              <p className="text-gray-400 mb-4">
+              <p className="text-gray-600 mb-4">
                 Your trusted partner for premium fitness solutions across India.
                 From gym design to wellness management, we deliver excellence.
               </p>
               <div className="flex space-x-4">
                 <div className="flex items-center">
                   <Star className="w-5 h-5 text-yellow-400 mr-1" />
-                  <span className="text-sm text-gray-400">4.9/5 Rating</span>
+                  <span className="text-sm text-gray-600">4.9/5 Rating</span>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-gray-100">
+              <h3 className="text-lg font-semibold mb-4 text-gray-900">
                 Quick Links
               </h3>
               <ul className="space-y-2">
                 <li>
                   <a
                     href="#home"
-                    className="text-gray-400 hover:text-blue-300 transition-colors"
+                    className="text-gray-600 hover:text-blue-600 transition-colors"
                   >
                     Home
                   </a>
@@ -611,7 +611,7 @@ const FocusFitnessWebsite = () => {
                 <li>
                   <a
                     href="#about"
-                    className="text-gray-400 hover:text-blue-300 transition-colors"
+                    className="text-gray-600 hover:text-blue-600 transition-colors"
                   >
                     About Us
                   </a>
@@ -619,7 +619,7 @@ const FocusFitnessWebsite = () => {
                 <li>
                   <a
                     href="#services"
-                    className="text-gray-400 hover:text-blue-300 transition-colors"
+                    className="text-gray-600 hover:text-blue-600 transition-colors"
                   >
                     Services
                   </a>
@@ -627,7 +627,7 @@ const FocusFitnessWebsite = () => {
                 <li>
                   <a
                     href="#contact"
-                    className="text-gray-400 hover:text-blue-300 transition-colors"
+                    className="text-gray-600 hover:text-blue-600 transition-colors"
                   >
                     Contact
                   </a>
@@ -636,20 +636,20 @@ const FocusFitnessWebsite = () => {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-gray-100">
+              <h3 className="text-lg font-semibold mb-4 text-gray-900">
                 Services
               </h3>
               <ul className="space-y-2 text-sm">
-                <li className="text-gray-400">Fitness Center Design</li>
-                <li className="text-gray-400">Corporate Wellness</li>
-                <li className="text-gray-400">Equipment Leasing</li>
-                <li className="text-gray-400">Personal Training</li>
-                <li className="text-gray-400">Sports Facilities</li>
+                <li className="text-gray-800">Fitness Center Design</li>
+                <li className="text-gray-800">Corporate Wellness</li>
+                <li className="text-gray-800">Equipment Leasing</li>
+                <li className="text-gray-800">Personal Training</li>
+                <li className="text-gray-800">Sports Facilities</li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center">
+          <div className="border-t border-gray-200 mt-8 pt-8 text-center">
             <p className="text-gray-500">
               © 2024 Focus on Fitness. All rights reserved. |
               <span className="text-blue-400"> Designed for Excellence</span>
