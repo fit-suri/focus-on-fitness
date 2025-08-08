@@ -676,13 +676,13 @@ function CarouselBackground() {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="absolute inset-0 w-full h-[220px] md:h-full z-0 transition-all duration-1000">
+    <div className="absolute inset-0 w-full h-full z-0 transition-all duration-1000">
       {carouselImages.map((img, idx) => (
         <img
           key={img}
           src={img}
           alt="Fitness background"
-          className={`absolute inset-0 w-full h-[220px] md:h-full object-cover transition-opacity duration-1000 ${current === idx ? 'opacity-100' : 'opacity-0'}`}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${current === idx ? 'opacity-100' : 'opacity-0'}`}
           style={{transitionProperty: 'opacity'}}
         />
       ))}
