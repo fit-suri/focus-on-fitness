@@ -259,6 +259,7 @@ const FocusFitnessWebsite = () => {
         className="relative pt-16 pb-20 overflow-hidden"
       >
         {/* Video Background */}
+        {/*
         <video
           autoPlay
           loop
@@ -269,6 +270,9 @@ const FocusFitnessWebsite = () => {
           <source src="/gym_video_1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        */}
+        {/* Carousel Background */}
+        <CarouselBackground />
         {/* Overlay for readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/60 to-purple-900/60 z-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 z-20">
@@ -656,5 +660,34 @@ const FocusFitnessWebsite = () => {
     </div>
   );
 };
+
+const carouselImages = [
+  "/pexels-leonardho-1552242.jpg",
+  "/victor-freitas-qZ-U9z4TQ6A-unsplash.jpg",
+  "/2137659-3840x2160-desktop-4k-gym-motivation-wallpaper-image.jpg"
+];
+
+function CarouselBackground() {
+  const [current, setCurrent] = React.useState(0);
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % carouselImages.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
+  return (
+    <div className="absolute inset-0 w-full h-full z-0 transition-all duration-1000">
+      {carouselImages.map((img, idx) => (
+        <img
+          key={img}
+          src={img}
+          alt="Fitness background"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${current === idx ? 'opacity-100' : 'opacity-0'}`}
+          style={{transitionProperty: 'opacity'}}
+        />
+      ))}
+    </div>
+  );
+}
 
 export default FocusFitnessWebsite;

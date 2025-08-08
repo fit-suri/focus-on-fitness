@@ -22,7 +22,7 @@ const FitnessCenterDesign = () => {
       icon: <Target className="w-8 h-8 text-green-400" />,
       title: "Equipment Selection & Placement",
       description: "Expert guidance on choosing and positioning the right mix of cardio, strength, and functional training equipment for your target demographic.",
-      image:"/top-view-perfectly-ordered-fitness-items.jpg"
+      image:"/fitness-equipment.webp"
     },
     {
       icon: <Wrench className="w-8 h-8 text-orange-400" />,
