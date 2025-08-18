@@ -190,7 +190,7 @@ const FocusFitnessWebsite = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-gray-100 to-blue-100 text-gray-900">
+  <div className="min-h-screen text-gray-900">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -256,50 +256,39 @@ const FocusFitnessWebsite = () => {
       {/* Hero Section */}
       <section
         id="home"
-        className="relative pt-16 pb-20 overflow-hidden bg-gradient-to-br from-white via-gray-100 to-blue-100"
+        className="relative pt-16 pb-20 overflow-hidden"
       >
-        {/* Video Background */}
-        {/*
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        >
-          <source src="/gym_video_1.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        */}
         {/* Carousel Background */}
         <CarouselBackground />
         {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-200/20 to-purple-200/20 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-transparent to-purple-900/80 z-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 z-20">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-600 via-purple-400 to-blue-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl font-bold mb-8">
+              <span className="text-white drop-shadow-[0_2px_20px_rgba(255,255,255,0.3)]">
                 Transform Your Space
               </span>
               <br />
-              <span className="text-gray-900">Into a Fitness Destination</span>
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mt-4 block text-5xl md:text-7xl">
+                Into a Fitness Destination
+              </span>
             </h1>
-            <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+            <p className="text-2xl text-blue-100 mb-12 max-w-3xl mx-auto font-medium drop-shadow-lg">
               Whether you're building a high-performance fitness center,
               enhancing a corporate wellness program, or creating a vibrant
               recreational space — Focus on Fitness is your trusted partner.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <a
                 href="#contact"
-                className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-400 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-10 py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-semibold rounded-lg hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 transition-all shadow-[0_4px_20px_rgba(192,38,211,0.5)] hover:shadow-[0_8px_25px_rgba(192,38,211,0.6)]"
               >
                 Get Free Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
               </a>
               <a
                 href="#services"
-                className="inline-flex items-center px-8 py-3 bg-transparent border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-100 hover:text-blue-800 transition-all"
+                className="inline-flex items-center px-10 py-4 bg-white/10 backdrop-blur-sm border-2 border-purple-400/50 text-purple-100 font-semibold rounded-lg hover:bg-purple-500/20 hover:border-purple-400 transition-all"
               >
                 View Our Services
               </a>
@@ -307,14 +296,14 @@ const FocusFitnessWebsite = () => {
           </div>
 
           {/* Stats */}
-          <div className="mt-20 flex justify-center">
-            <div className="grid grid-cols-2 gap-8 w-full max-w-xs">
+          <div className="mt-24 flex justify-center">
+            <div className="grid grid-cols-2 gap-8 w-full max-w-2xl">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
+                <div key={index} className="text-center p-6 rounded-2xl bg-gradient-to-br from-white/10 to-purple-500/10 backdrop-blur-sm border border-purple-400/20 hover:border-purple-400/40 transition-all duration-300">
+                  <div className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-3">
                     {stat.number}
                   </div>
-                  <div className="text-gray-600">{stat.label}</div>
+                  <div className="text-lg text-blue-100 font-medium tracking-wide">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -325,22 +314,25 @@ const FocusFitnessWebsite = () => {
       {/* About Section */}
       <section
         id="about"
-        className="py-20 bg-gray-100/80"
+        className="py-24 relative"
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(243,244,246,0.85),rgba(243,244,246,0.85)), url(https://images.unsplash.com/photo-1517960413843-0aee8e2d471c?auto=format&fit=crop&w=1500&q=80)",
+          backgroundImage: "url('/victor-freitas-qZ-U9z4TQ6A-unsplash.jpg')",
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "center 30%",
+          backgroundAttachment: "fixed"
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-blue-600 to-purple-400 bg-clip-text text-transparent">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-blue-900/50 to-indigo-900/70 backdrop-blur-[1px]"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30"></div>
+        <div className="absolute inset-0 backdrop-blur-[1px]"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-blue-300 via-purple-200 to-blue-300 bg-clip-text text-transparent drop-shadow-lg">
                 About Focus on Fitness
               </span>
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-2xl text-blue-100 max-w-4xl mx-auto font-light leading-relaxed">
               We specialize in end-to-end fitness solutions: from concept and
               design to equipment selection and full facility management. Every
               project is driven by our commitment to excellence and tailored to
@@ -349,34 +341,55 @@ const FocusFitnessWebsite = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-white to-blue-100 p-8 rounded-xl border border-gray-200 hover:border-blue-400 transition-colors">
-              <Award className="w-12 h-12 text-blue-600 mb-4" />
-              <h3 className="text-xl font-bold mb-4 text-gray-900">
+            <div className="group p-8 rounded-2xl bg-white/5 backdrop-blur-[8px] border border-white/20 
+              hover:border-blue-400/30 transition-all duration-500 hover:transform hover:-translate-y-2
+              hover:bg-gradient-to-br hover:from-blue-100/10 hover:to-purple-500/10
+              shadow-[0_4px_20px_rgba(59,130,246,0.1)] hover:shadow-[0_8px_30px_rgba(99,102,241,0.2)]">
+              <div className="mb-6 transform group-hover:scale-110 transition-transform duration-500">
+                <div className="w-16 h-16 flex items-center justify-center rounded-xl bg-white/10 backdrop-blur-[8px] border border-white/20 group-hover:border-blue-400/40">
+                  <Award className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors duration-300" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-blue-100 group-hover:text-blue-200 transition-colors duration-300">
                 Excellence Driven
               </h3>
-              <p className="text-gray-700">
+              <p className="text-gray-300 leading-relaxed">
                 Every project is driven by our commitment to excellence and
                 tailored to meet your specific needs.
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-white to-blue-100 p-8 rounded-xl border border-gray-200 hover:border-blue-400 transition-colors">
-              <Users className="w-12 h-12 text-blue-600 mb-4" />
-              <h3 className="text-xl font-bold mb-4 text-gray-900">
+            <div className="group p-8 rounded-2xl bg-white/5 backdrop-blur-[8px] border border-white/20 
+              hover:border-blue-400/30 transition-all duration-500 hover:transform hover:-translate-y-2
+              hover:bg-gradient-to-br hover:from-blue-100/10 hover:to-purple-500/10
+              shadow-[0_4px_20px_rgba(59,130,246,0.1)] hover:shadow-[0_8px_30px_rgba(99,102,241,0.2)]">
+              <div className="mb-6 transform group-hover:scale-110 transition-transform duration-500">
+                <div className="w-16 h-16 flex items-center justify-center rounded-xl bg-white/10 backdrop-blur-[8px] border border-white/20 group-hover:border-blue-400/40">
+                  <Users className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors duration-300" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-blue-100 group-hover:text-blue-200 transition-colors duration-300">
                 Community Building
               </h3>
-              <p className="text-gray-700">
+              <p className="text-gray-300 leading-relaxed">
                 We don't just build gyms — we build communities of strength,
                 health, and motivation.
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-white to-blue-100 p-8 rounded-xl border border-gray-200 hover:border-blue-400 transition-colors">
-              <Shield className="w-12 h-12 text-blue-600 mb-4" />
-              <h3 className="text-xl font-bold mb-4 text-gray-900">
+            <div className="group p-8 rounded-2xl bg-white/5 backdrop-blur-[8px] border border-white/20 
+              hover:border-blue-400/30 transition-all duration-500 hover:transform hover:-translate-y-2
+              hover:bg-gradient-to-br hover:from-blue-100/10 hover:to-purple-500/10
+              shadow-[0_4px_20px_rgba(59,130,246,0.1)] hover:shadow-[0_8px_30px_rgba(99,102,241,0.2)]">
+              <div className="mb-6 transform group-hover:scale-110 transition-transform duration-500">
+                <div className="w-16 h-16 flex items-center justify-center rounded-xl bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/20 group-hover:border-amber-400/40">
+                  <Shield className="w-8 h-8 text-amber-400 group-hover:text-amber-300 transition-colors duration-300" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-amber-100 group-hover:text-amber-200 transition-colors duration-300">
                 Trusted Partner
               </h3>
-              <p className="text-gray-700">
+              <p className="text-gray-300 leading-relaxed">
                 With 9+ years of experience and 100+ successful projects, we're
                 your reliable fitness partner.
               </p>
@@ -388,22 +401,24 @@ const FocusFitnessWebsite = () => {
       {/* Services Section */}
       <section
         id="services"
-        className="py-20 bg-white/80"
+        className="py-20 relative"
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.25),rgba(221,236,255,0.25)), url('/victor-freitas-qZ-U9z4TQ6A-unsplash.jpg')",
-          backgroundSize: "cover",
+          backgroundImage: "url('/victor-freitas-qZ-U9z4TQ6A-unsplash.jpg')",
+          backgroundSize: "100%",
           backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed"
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-purple-900/20"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-blue-600 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 bg-clip-text text-transparent drop-shadow-lg">
                 Our Services
               </span>
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-2xl text-white max-w-3xl mx-auto drop-shadow-md font-light">
               Comprehensive fitness solutions tailored to your needs
             </p>
           </div>
@@ -413,21 +428,30 @@ const FocusFitnessWebsite = () => {
               <Link
                 key={index}
                 href={service.link || '#'}
-                className="block bg-gradient-to-br from-white to-blue-100 p-8 rounded-xl border border-gray-200 hover:border-blue-400 transition-all hover:transform hover:scale-105"
+                className="group block p-8 rounded-2xl bg-gradient-to-br from-white/5 via-purple-500/5 to-blue-500/5 backdrop-blur-[6px] border border-white/10 
+                hover:border-purple-300/30 transition-all duration-500 hover:transform hover:scale-105 
+                hover:bg-gradient-to-br hover:from-white/10 hover:via-purple-500/10 hover:to-blue-500/10
+                shadow-[0_4px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_rgba(168,85,247,0.2)]"
               >
-                <div className="mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">
+                <div className="mb-6 transform group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-16 h-16 flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-white/10 group-hover:border-purple-300/30">
+                    {service.icon}
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-white drop-shadow-md group-hover:text-purple-100 transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="text-gray-700 mb-6">{service.description}</p>
-                <ul className="space-y-2">
+                <p className="text-gray-100 mb-8 drop-shadow-sm leading-relaxed">
+                  {service.description}
+                </p>
+                <ul className="space-y-4">
                   {service.features.map((feature, idx) => (
                     <li
                       key={idx}
-                      className="flex items-center text-sm text-gray-800"
+                      className="flex items-center text-base text-white/90 group-hover:text-white transition-colors duration-300"
                     >
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                      {feature}
+                      <CheckCircle className="w-5 h-5 text-purple-300 mr-3 group-hover:text-purple-200 transition-colors duration-300" />
+                      <span className="drop-shadow-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -438,7 +462,13 @@ const FocusFitnessWebsite = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section id="contact" className="py-20 bg-gray-100/80">
+      <section
+        id="contact"
+        className="py-20"
+        style={{
+          background: "linear-gradient(120deg, #fffbe3 70%, #e3f0ff 100%)"
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
