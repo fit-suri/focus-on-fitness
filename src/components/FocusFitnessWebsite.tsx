@@ -13,12 +13,13 @@ import {
   ArrowRight,
   Menu,
   X,
-  Dumbbell,
   Building,
   Heart,
   Target,
   Zap,
   Shield,
+  Activity,
+  Dumbbell
 } from "lucide-react";
 
 type Service = {
@@ -195,14 +196,12 @@ const FocusFitnessWebsite = () => {
       <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <Dumbbell className="w-8 h-8 text-blue-600 mr-3" />
+              <div className="flex items-center">
+              <Activity className="w-8 h-8 text-blue-600 mr-3" />
               <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-400 bg-clip-text text-transparent">
                 Focus on Fitness
               </span>
-            </div>
-
-            <div className="hidden md:block">
+            </div>            <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 {["Home", "About", "Services", "Contact"].map((item) => (
                   <a
@@ -404,10 +403,11 @@ const FocusFitnessWebsite = () => {
         className="py-20 relative"
         style={{
           backgroundImage: "url('/victor-freitas-qZ-U9z4TQ6A-unsplash.jpg')",
-          backgroundSize: "100%",
+          backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed"
+          backgroundAttachment: "fixed",
+          minHeight: "100vh"
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-purple-900/20"></div>
@@ -464,55 +464,83 @@ const FocusFitnessWebsite = () => {
       {/* Contact Form Section */}
       <section
         id="contact"
-        className="py-20"
+        className="py-20 relative"
         style={{
-          background: "linear-gradient(120deg, #fffbe3 70%, #e3f0ff 100%)"
+          backgroundImage: "url('/pexels-leonardho-1552242.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+          minHeight: "100vh"
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 bg-gradient-to-br from-black/10 to-purple-900/20"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 bg-clip-text text-transparent drop-shadow-lg">
+                Get In Touch
+              </span>
+            </h2>
+            <p className="text-2xl text-white max-w-3xl mx-auto font-light leading-relaxed mb-8 drop-shadow-md">
+              Ready to transform your space? Let's discuss your fitness
+              facility needs and create something amazing together.
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-blue-600 to-purple-400 bg-clip-text text-transparent">
-                  Get In Touch
-                </span>
-              </h2>
-              <p className="text-xl text-gray-700 mb-8">
-                Ready to transform your space? Let's discuss your fitness
-                facility needs and create something amazing together.
-              </p>
-
-              <div className="space-y-6">
+            <div className="space-y-8">
+              <div className="group p-6 rounded-2xl bg-gradient-to-br from-white/5 via-purple-500/5 to-blue-500/5 backdrop-blur-[6px] border border-white/10 
+                hover:border-purple-300/30 transition-all duration-500
+                hover:bg-gradient-to-br hover:from-white/10 hover:via-purple-500/10 hover:to-blue-500/10
+                shadow-[0_4px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_rgba(168,85,247,0.2)]">
                 <div className="flex items-center">
-                  <Phone className="w-6 h-6 text-blue-600 mr-4" />
-                  <div>
-                    <p className="font-semibold text-gray-900">Call Us</p>
-                    <p className="text-gray-700">+91 9876543210</p>
+                  <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-white/10 group-hover:border-purple-300/30">
+                    <Phone className="w-6 h-6 text-blue-300 group-hover:text-blue-200" />
+                  </div>
+                  <div className="ml-4">
+                    <p className="font-semibold text-white group-hover:text-purple-100">Call Us</p>
+                    <p className="text-gray-300">+91 9876543210</p>
                   </div>
                 </div>
+              </div>
 
+              <div className="group p-6 rounded-2xl bg-gradient-to-br from-white/5 via-purple-500/5 to-blue-500/5 backdrop-blur-[6px] border border-white/10 
+                hover:border-purple-300/30 transition-all duration-500
+                hover:bg-gradient-to-br hover:from-white/10 hover:via-purple-500/10 hover:to-blue-500/10
+                shadow-[0_4px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_rgba(168,85,247,0.2)]">
                 <div className="flex items-center">
-                  <Mail className="w-6 h-6 text-blue-600 mr-4" />
-                  <div>
-                    <p className="font-semibold text-gray-900">Email Us</p>
-                    <p className="text-gray-700">info@focusonfitness.in</p>
+                  <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-white/10 group-hover:border-purple-300/30">
+                    <Mail className="w-6 h-6 text-blue-300 group-hover:text-blue-200" />
+                  </div>
+                  <div className="ml-4">
+                    <p className="font-semibold text-white group-hover:text-purple-100">Email Us</p>
+                    <p className="text-gray-300">info@focusonfitness.in</p>
                   </div>
                 </div>
+              </div>
 
+              <div className="group p-6 rounded-2xl bg-gradient-to-br from-white/5 via-purple-500/5 to-blue-500/5 backdrop-blur-[6px] border border-white/10 
+                hover:border-purple-300/30 transition-all duration-500
+                hover:bg-gradient-to-br hover:from-white/10 hover:via-purple-500/10 hover:to-blue-500/10
+                shadow-[0_4px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_rgba(168,85,247,0.2)]">
                 <div className="flex items-center">
-                  <MapPin className="w-6 h-6 text-blue-600 mr-4" />
-                  <div>
-                    <p className="font-semibold text-gray-900">Visit Us</p>
-                    <p className="text-gray-700">Bangalore, Karnataka, India</p>
+                  <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-white/10 group-hover:border-purple-300/30">
+                    <MapPin className="w-6 h-6 text-blue-300 group-hover:text-blue-200" />
+                  </div>
+                  <div className="ml-4">
+                    <p className="font-semibold text-white group-hover:text-purple-100">Visit Us</p>
+                    <p className="text-gray-300">Bangalore, Karnataka, India</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-white to-blue-100 p-8 rounded-xl border border-gray-200">
+            <div className="p-8 rounded-2xl bg-gradient-to-br from-white/5 via-purple-500/5 to-blue-500/5 backdrop-blur-[6px] border border-white/10 
+              hover:border-purple-300/30 transition-all duration-500
+              shadow-[0_4px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_rgba(168,85,247,0.2)]">
               <div className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-gray-800">
+                  <label className="block text-sm font-medium mb-2 text-white">
                     Full Name
                   </label>
                   <input
@@ -520,12 +548,13 @@ const FocusFitnessWebsite = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent text-gray-900 placeholder-gray-400"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent text-white placeholder-gray-400 backdrop-blur-[4px]"
+                    placeholder="Your name"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-gray-800">
+                  <label className="block text-sm font-medium mb-2 text-white">
                     Email Address
                   </label>
                   <input
@@ -533,12 +562,13 @@ const FocusFitnessWebsite = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent text-gray-900 placeholder-gray-400"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent text-white placeholder-gray-400 backdrop-blur-[4px]"
+                    placeholder="your.email@example.com"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-gray-800">
+                  <label className="block text-sm font-medium mb-2 text-white">
                     Phone Number
                   </label>
                   <input
@@ -546,38 +576,33 @@ const FocusFitnessWebsite = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent text-gray-900 placeholder-gray-400"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent text-white placeholder-gray-400 backdrop-blur-[4px]"
+                    placeholder="Your phone number"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-gray-800">
+                  <label className="block text-sm font-medium mb-2 text-white">
                     Service Interested In
                   </label>
                   <select
                     name="service"
                     value={formData.service}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent text-gray-900"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent text-white backdrop-blur-[4px]"
                   >
-                    <option value="">Select a service</option>
-                    <option value="gym-design">Fitness Center Design</option>
-                    <option value="sports-facility">
-                      Sports & Recreational Facility
-                    </option>
-                    <option value="onsite-management">
-                      On-Site Fitness Management
-                    </option>
-                    <option value="wellness-solutions">
-                      Wellness Solutions
-                    </option>
-                    <option value="equipment-lease">Equipment on Lease</option>
-                    <option value="personal-training">Personal Training</option>
+                    <option value="" className="text-gray-900">Select a service</option>
+                    <option value="gym-design" className="text-gray-900">Fitness Center Design</option>
+                    <option value="sports-facility" className="text-gray-900">Sports & Recreational Facility</option>
+                    <option value="onsite-management" className="text-gray-900">On-Site Fitness Management</option>
+                    <option value="wellness-solutions" className="text-gray-900">Wellness Solutions</option>
+                    <option value="equipment-lease" className="text-gray-900">Equipment on Lease</option>
+                    <option value="personal-training" className="text-gray-900">Personal Training</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-gray-800">
+                  <label className="block text-sm font-medium mb-2 text-white">
                     Message
                   </label>
                   <textarea
@@ -585,14 +610,16 @@ const FocusFitnessWebsite = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={4}
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent text-gray-900 placeholder-gray-400"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent text-white placeholder-gray-400 backdrop-blur-[4px]"
                     placeholder="Tell us about your project requirements..."
                   ></textarea>
                 </div>
 
                 <button
                   onClick={handleFormSubmit}
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-400 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl"
+                  className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-semibold py-4 px-6 rounded-lg 
+                    hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 transition-all 
+                    shadow-[0_4px_20px_rgba(192,38,211,0.5)] hover:shadow-[0_8px_25px_rgba(192,38,211,0.6)]"
                 >
                   Send Message
                 </button>
@@ -603,86 +630,121 @@ const FocusFitnessWebsite = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white py-12 border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <footer className="relative py-12" style={{
+          backgroundImage: "url('/victor-freitas-qZ-U9z4TQ6A-unsplash.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed"
+        }}>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-purple-900/70 to-black/80 backdrop-blur-[1px]"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
-            <div>
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-white/5 via-purple-500/5 to-blue-500/5 backdrop-blur-[6px] border border-white/10 
+              hover:border-purple-300/30 transition-all duration-500
+              shadow-[0_4px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_rgba(168,85,247,0.2)]">
               <div className="flex items-center mb-4">
-                <Dumbbell className="w-8 h-8 text-blue-600 mr-3" />
-                <span className="text-xl font-bold text-gray-900">
+                <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-white/10">
+                  <Activity className="w-6 h-6 text-blue-300" />
+                </div>
+                <span className="text-xl font-bold ml-3 bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">
                   Focus on Fitness
                 </span>
               </div>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-300 mb-4">
                 Your trusted partner for premium fitness solutions across India.
                 From gym design to wellness management, we deliver excellence.
               </p>
               <div className="flex space-x-4">
-                <div className="flex items-center">
-                  <Star className="w-5 h-5 text-yellow-400 mr-1" />
-                  <span className="text-sm text-gray-600">4.9/5 Rating</span>
+                <div className="flex items-center p-2 rounded-lg bg-gradient-to-br from-white/5 to-purple-500/10 backdrop-blur-[4px] border border-white/10">
+                  <Star className="w-5 h-5 text-yellow-300 mr-1" />
+                  <span className="text-sm text-gray-300">4.9/5 Rating</span>
                 </div>
               </div>
             </div>
 
-            <div>
-              <h3 className="text-lg font-semibold mb-4 text-gray-900">
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-white/5 via-purple-500/5 to-blue-500/5 backdrop-blur-[6px] border border-white/10 
+              hover:border-purple-300/30 transition-all duration-500
+              shadow-[0_4px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_rgba(168,85,247,0.2)]">
+              <h3 className="text-lg font-semibold mb-4 bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">
                 Quick Links
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 <li>
                   <a
                     href="#home"
-                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                    className="text-gray-300 hover:text-purple-300 transition-colors flex items-center"
                   >
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mr-2"></div>
                     Home
                   </a>
                 </li>
                 <li>
                   <a
                     href="#about"
-                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                    className="text-gray-300 hover:text-purple-300 transition-colors flex items-center"
                   >
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mr-2"></div>
                     About Us
                   </a>
                 </li>
                 <li>
                   <a
                     href="#services"
-                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                    className="text-gray-300 hover:text-purple-300 transition-colors flex items-center"
                   >
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mr-2"></div>
                     Services
                   </a>
                 </li>
                 <li>
                   <a
                     href="#contact"
-                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                    className="text-gray-300 hover:text-purple-300 transition-colors flex items-center"
                   >
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mr-2"></div>
                     Contact
                   </a>
                 </li>
               </ul>
             </div>
 
-            <div>
-              <h3 className="text-lg font-semibold mb-4 text-gray-900">
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-white/5 via-purple-500/5 to-blue-500/5 backdrop-blur-[6px] border border-white/10 
+              hover:border-purple-300/30 transition-all duration-500
+              shadow-[0_4px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_rgba(168,85,247,0.2)]">
+              <h3 className="text-lg font-semibold mb-4 bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">
                 Services
               </h3>
-              <ul className="space-y-2 text-sm">
-                <li className="text-gray-800">Fitness Center Design</li>
-                <li className="text-gray-800">Corporate Wellness</li>
-                <li className="text-gray-800">Equipment Leasing</li>
-                <li className="text-gray-800">Personal Training</li>
-                <li className="text-gray-800">Sports Facilities</li>
+              <ul className="space-y-3">
+                <li className="text-gray-300 flex items-center">
+                  <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mr-2"></div>
+                  Fitness Center Design
+                </li>
+                <li className="text-gray-300 flex items-center">
+                  <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mr-2"></div>
+                  Corporate Wellness
+                </li>
+                <li className="text-gray-300 flex items-center">
+                  <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mr-2"></div>
+                  Equipment Leasing
+                </li>
+                <li className="text-gray-300 flex items-center">
+                  <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mr-2"></div>
+                  Personal Training
+                </li>
+                <li className="text-gray-300 flex items-center">
+                  <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mr-2"></div>
+                  Sports Facilities
+                </li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-gray-200 mt-8 pt-8 text-center">
-            <p className="text-gray-500">
-              © 2024 Focus on Fitness. All rights reserved. |
-              <span className="text-blue-400"> Designed for Excellence</span>
+          <div className="mt-8 pt-8 text-center border-t border-white/10">
+            <p className="text-gray-400">
+              © 2024 Focus on Fitness. All rights reserved. |{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Designed for Excellence
+              </span>
             </p>
           </div>
         </div>
