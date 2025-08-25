@@ -2,6 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import emailjs from '@emailjs/browser';
+
+// Initialize EmailJS with your public key
+emailjs.init('yGxbJ0YGJgb9vVLf2');
 import {
   Phone,
   Mail,
@@ -155,10 +159,40 @@ const FocusFitnessWebsite = () => {
     { number: "24/7", label: "Support Available" },
   ];
 
-  const handleFormSubmit = (e: React.MouseEvent) => {
+  const handleFormSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
-    alert("Thank you for your inquiry! We will contact you soon.");
-    setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+    
+    try {
+      // Replace these with your actual EmailJS service details
+      const serviceId = 'default_service';
+      const templateId = 'template_iif6i97';
+      const publicKey = 'yGxbJ0YGJgb9vVLf2';
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        inquiry_type: formData.service,
+        message: formData.message,
+      };
+
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      );
+
+      if (response.status === 200) {
+        alert("Thank you for your inquiry! We will contact you soon.");
+        setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+      } else {
+        alert("Something went wrong. Please try again later.");
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert("Something went wrong. Please try again later.");
+    }
   };
 
   const handleInputChange = (
@@ -636,7 +670,7 @@ const FocusFitnessWebsite = () => {
           backgroundPosition: "center",
           backgroundAttachment: "fixed"
         }}>
-        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-purple-900/70 to-black/80 backdrop-blur-[1px]"></div>
+  <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-black/20 backdrop-blur-[1px]"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="p-6 rounded-2xl bg-gradient-to-br from-white/5 via-purple-500/5 to-blue-500/5 backdrop-blur-[6px] border border-white/10 
