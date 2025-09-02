@@ -533,7 +533,7 @@ const FocusFitnessWebsite = () => {
                   </div>
                   <div className="ml-4">
                     <p className="font-semibold text-white group-hover:text-purple-100">Call Us</p>
-                    <p className="text-gray-300">+91 9876543210</p>
+                    <p className="text-gray-300">+91 8310890008</p>
                   </div>
                 </div>
               </div>
@@ -548,7 +548,7 @@ const FocusFitnessWebsite = () => {
                   </div>
                   <div className="ml-4">
                     <p className="font-semibold text-white group-hover:text-purple-100">Email Us</p>
-                    <p className="text-gray-300">info@focusonfitness.in</p>
+                    <p className="text-gray-300">surendra@focusonfitness.in</p>
                   </div>
                 </div>
               </div>
